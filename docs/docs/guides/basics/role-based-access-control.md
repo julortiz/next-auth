@@ -130,9 +130,9 @@ If you want to use the role in the client, for both cases above, when using the 
 import { useSession } from "next-auth/react"
 
 export default function Page() {
-  const session = await useSession()
+  const { data: session } = useSession()
 
-  if (session?.user.role === "admin") {
+  if (session?.user?.role === "admin") {
     return <p>You are an admin, welcome!</p>
   }
 
